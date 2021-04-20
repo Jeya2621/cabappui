@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Login Form</h2>
-<form action = "cabtype.html">
+<form onsubmit = "login()">
 <label><b>User Name</b></label>
 <input type = "text" name = "uname" id ="uname" required />
 <br><br>
@@ -14,6 +14,33 @@
 <input type = "password" name = "pass" id = "pass" required />
 <br>
 <a href="cabtype.html"><button>SUBMIT</button></a>
+<button type = "button" onclick="hello()">click me</button>
 </form>
+
+<script>
+    function login(){
+        event.preventDefault();
+        alert("Login Button Clicked");
+        let username = document.querySelector("#uname").value;
+        alert("Username :"+username);
+        if(username == "admin" && username.length > 3){
+            alert("Correct User Name");
+            let password = document.querySelector("#pass").value;
+            if(password == "jeya123" && password.length >6){
+            alert("Logged in Successfully");
+        }
+        else{
+            alert("Enter Correct Password");
+        }
+        }
+        else{
+            alert("Invalid Username");
+        }       
+    }
+    function hello(){
+        alert("Hello");
+    }
+</script>
+
 </body>
 </html>
